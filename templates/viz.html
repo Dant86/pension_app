@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <style>
+            canvas{
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+            }
+        </style>
+    </head>
+    <body>
+        {{ age }}
+        {{ yrs_worked }}
+        {{ sal }}
+
+        <div style="width:75%;">
+            <canvas id="charts"></canvas>
+        </div>
+
+        <script>
+            var xs = [
+                {% for item in data %}
+                    "{{ item[0] }}",
+                {% endfor %}
+            ]
+            var ys_payable = [
+                {% for item in data %}
+                    {{ item[1][0] }},
+                {% endfor %}
+            ]
+            var ys_cpi = [
+                {% for item in data %}
+                    {{ item[1][1] }},
+                {% endfor %}
+            ]
+            var ys_halfpt = [
+                {% for item in data %}
+                    {{ item[1][2] }},
+                {% endfor %}
+            ]
+            var ys_onept = [
+                {% for item in data %}
+                    {{ item[1][3] }},
+                {% endfor %}
+            ]
+
+            var colors = {
+                red: 'rgb(255, 99, 132)',
+                orange: 'rgb(255, 159, 64)',
+                yellow: 'rgb(255, 205, 86)',
+                green: 'rgb(75, 192, 192)',
+                blue: 'rgb(54, 162, 235)',
+                purple: 'rgb(153, 102, 255)',
+                grey: 'rgb(201, 203, 207)'
+            };
+
+            var opts = {
+                type: "line",
+                data: {
+                    labels: xs,
+                    datasets: [{
+                        label: "Payable plan",
+                        backgroundColor: colors.red,
+                        borderColor: colors.red,
+                        data: ys_payable,
+                        fill: false
+                    }, {
+                        label: "CPI plan",
+                        backgroundColor: colors.blue,
+                        borderColor: colors.blue,
+                        data: ys_cpi,
+                        fill: false
+                    }, {
+                        label: "COLA half-point plan",
+                        backgroundColor: colors.green,
+                        borderColor: colors.green,
+                        data: ys_halfpt,
+                        fill: false
+                    }, {
+                        label: "COLA one-point plan",
+                        backgroundColor: colors.orange,
+                        borderColor: colors.orange,
+                        data: ys_onept,
+                        fill: false
+                    }]
+                }, options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: 'Chart.js Line Chart'
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Year'
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Pension'
+                            }
+                        }]
+                    }
+                }
+            }
+            var ctx = document.getElementById('charts').getContext('2d');
+            var chart = new Chart(ctx, opts);
+        </script>
+
+    </body>
+</html>
