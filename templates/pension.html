@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <meta charset="utf-8">
+        <title>Chicago Pension Debt Model</title>
+        <link rel="stylesheet" href="pension.css" />
+    </head>
+
+    <body>
+        <form action="/viz" method="POST">
+        <p>Welcome to our pension debt modeling tool.</p>
+		<p>Age:
+			<p id="age"></p>
+			<div class="slidecontainer">
+				<input type="range" min="21" max="120" value="21" class="slider" id="ageSlider">
+			</div>	
+		</p>
+		<p>Years worked:
+			<p id="years_worked"></p>
+			<div class="slidecontainer">
+				<input type="range" min="0" max="100" value="0" class="slider" id="yearsWorkedSlider">
+			</div>	
+		</p>
+		<p>Annual Salary:<br>
+			<input type="text" name="salary" id="input_salary">
+			 <button type="button" id="salary_button">Enter</button><br>
+			<p id="salary"></p>
+			<div class="slidecontainer">
+				<input type="range" min="60000" max="150000" value="60000" class="slider" id="salarySlider">
+			</div>
+            <input type="submit" value="Calculate My Pension!">
+            </form>
+		</p>
+		<!--
+		<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+		-->
+		
+		<p id="sources">
+			SOURCES:<br> https://www.pewtrusts.org/en/research-and-analysis/issue-briefs/2019/06/the-state-pension-funding-gap-2017<br>	https://www.pewtrusts.org/en/research-and-analysis/issue-briefs/2019/06/the-state-pension-funding-gap-2017<br>https://budgetblog.ctbaonline.org/chicagos-pension-crisis-isn-t-really-about-pensions-it-s-about-debt-cab30326b9c8<br>https://wirepoints.org/chicago-teachers-strike-why-is-no-one-talking-about-pensions/<br>https://www.manhattan-institute.org/chicago-teacher-pensions-vesting-strike<br>https://www.realclearpolicy.com/articles/2019/11/07/chicago_punts_on_its_looming_teacher_pension_disaster_111300.html<br>
+			https://www.teacherpensions.org/<br>https://www.teacherpensions.org/sites/default/files/Teacher%20Pension%20Pac-Man_Web.pdf
+
+		</p>
+		
+        <script src="pension.js"></script>
+		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    </body>
+</html>
