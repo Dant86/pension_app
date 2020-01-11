@@ -11,14 +11,24 @@
                 -ms-user-select: none;
             }
         </style>
+        <link rel="stylesheet" href="static/pension.css" />
     </head>
     <body>
-        {{ age }}
-        {{ yrs_worked }}
-        {{ sal }}
 
-        <div style="width:75%;">
+        <div style="width:100%;">
             <canvas id="charts"></canvas>
+        </div>
+
+        <div>
+            <p text-align="center">
+            What does this mean? As a teacher, you may receive less benefits in the next five years so that you can maximize your long term benefits upon retirement, as demonstrated in the graph above.
+            </p>
+            <p text-align="center">
+            Cost of Living Adjustment (COLA): A cost of living adjustment increases income to counteract inflation.
+            </p>
+            <p text-align="center">
+            CPI: The Consumer Price Index calculates how expensive it is to live somewhere. Changing this will change how large the cost of living adjustment is each year.
+            </p>
         </div>
 
         <script>
