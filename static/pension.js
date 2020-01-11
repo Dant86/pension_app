@@ -54,36 +54,7 @@ chart.render();
 ageSlider.oninput = function() {
 	age = this.value;
 	ageParagraph.innerHTML = age.toString() + " " + "years old";
-	/*
-	chart = new CanvasJS.Chart("chartContainer", {
-		animationEnabled: true,
-		theme: "light2",
-		title:{
-			text: "Pension Data"
-		},
-		axisY:{
-			includeZero: false
-		},
-		data: [{        
-			type: "line",       
-			dataPoints: [
-				{ y: 450 },
-				{ y: 414},
-				{ y: age * 5, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
-				{ y: 460 },
-				{ y: 450 },
-				{ y: 500 },
-				{ y: 480 },
-				{ y: 480 },
-				{ y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
-				{ y: 500 },
-				{ y: 480 },
-				{ y: 510 }
-			]
-		}]
-	});
-	chart.render();
-	*/
+	inputAge.value = age;
 }
 
 ageButton.onclick = function() {
@@ -98,6 +69,7 @@ ageButton.onclick = function() {
 yearsWorkedSlider.oninput = function() {
 	yearsWorked = this.value;
 	yearsWorkedParagraph.innerHTML = yearsWorked.toString() + " " + "years";
+	inputYearsWorked.value = yearsWorked;
 }
 
 yearsWorkedButton.onclick = function() {
