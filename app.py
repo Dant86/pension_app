@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def main_pg():
-    return render_template('index.html')
+    return render_template('pension.html')
 
 @app.route('/viz', methods=['POST'])
 def visualize():
