@@ -3,11 +3,16 @@ var yearsWorkedSlider = document.getElementById("yearsWorkedSlider");
 var salarySlider = document.getElementById("salarySlider");
 
 var ageParagraph = document.getElementById("age");
-var yearsWorkedParagraph = document.getElementById("years_worked");
-var salaryParagraph = document.getElementById("salary");
 ageParagraph.innerHTML = "21 years old";
+var yearsWorkedParagraph = document.getElementById("years_worked");
 yearsWorkedParagraph.innerHTML = "0 years";
+var salaryParagraph = document.getElementById("salary");
 salaryParagraph.innerHTML = "$60,000/year";
+
+var inputAge = document.getElementById("input_age");
+var ageButton = document.getElementById("age_button");
+var inputYearsWorked = document.getElementById("input_years_worked");
+var yearsWorkedButton = document.getElementById("years_worked_button");
 var inputSalary = document.getElementById("input_salary");
 var salaryButton = document.getElementById("salary_button");
 
@@ -81,10 +86,26 @@ ageSlider.oninput = function() {
 	*/
 }
 
+ageButton.onclick = function() {
+	age = inputAge.value;
+	if (Number.isSafeInteger(Number(age))) {
+		ageParagraph.innerHTML = age + " " + "years old";
+		ageSlider.value = age;
+	}
+}
+
 // UPDATE YEARS WORKED
 yearsWorkedSlider.oninput = function() {
 	yearsWorked = this.value;
 	yearsWorkedParagraph.innerHTML = yearsWorked.toString() + " " + "years";
+}
+
+yearsWorkedButton.onclick = function() {
+	yearsWorked = inputYearsWorked.value;
+	if (Number.isSafeInteger(Number(yearsWorked))) {
+		yearsWorkedParagraph.innerHTML = yearsWorked + " " + "years";
+		yearsWorkedSlider.value = yearsWorked;
+	}
 }
 
 // UPDATE SALARY
@@ -98,7 +119,7 @@ function numToMon(num) {
 	else {
 		var mon = "$" + num.toString();
 	}*/
-	var mon = "$" + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	var mon = "$" + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "/year";
 	// SOURCE: https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
 	return mon;
 }

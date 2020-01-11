@@ -9,13 +9,17 @@
     <body>
         <form action="/viz" method="POST">
         <p>Welcome to our pension debt modeling tool.</p>
-		<p>Age:
+		<p>Age:<br>
+			<input type="text" name="age" id="input_age">
+			<button type="button" id="age_button">Enter</button><br>
 			<p id="age"></p>
 			<div class="slidecontainer">
 				<input type="range" min="21" max="120" value="21" class="slider" id="ageSlider">
 			</div>	
 		</p>
-		<p>Years worked:
+		<p>Years worked:<br>
+			<input type="text" name="years_worked" id="input_years_worked">
+			<button type="button" id="years_worked_button">Enter</button><br>
 			<p id="years_worked"></p>
 			<div class="slidecontainer">
 				<input type="range" min="0" max="100" value="0" class="slider" id="yearsWorkedSlider">
@@ -23,7 +27,7 @@
 		</p>
 		<p>Annual Salary:<br>
 			<input type="text" name="salary" id="input_salary">
-			 <button type="button" id="salary_button">Enter</button><br>
+			<button type="button" id="salary_button">Enter</button><br>
 			<p id="salary"></p>
 			<div class="slidecontainer">
 				<input type="range" min="60000" max="150000" value="60000" class="slider" id="salarySlider">
@@ -36,7 +40,7 @@
 		-->
 		
 		<p id="sources">
-			SOURCES:<br> https://www.pewtrusts.org/en/research-and-analysis/issue-briefs/2019/06/the-state-pension-funding-gap-2017<br>	https://www.pewtrusts.org/en/research-and-analysis/issue-briefs/2019/06/the-state-pension-funding-gap-2017<br>https://budgetblog.ctbaonline.org/chicagos-pension-crisis-isn-t-really-about-pensions-it-s-about-debt-cab30326b9c8<br>https://wirepoints.org/chicago-teachers-strike-why-is-no-one-talking-about-pensions/<br>https://www.manhattan-institute.org/chicago-teacher-pensions-vesting-strike<br>https://www.realclearpolicy.com/articles/2019/11/07/chicago_punts_on_its_looming_teacher_pension_disaster_111300.html<br>
+			SOURCES:q:<br> https://www.pewtrusts.org/en/research-and-analysis/issue-briefs/2019/06/the-state-pension-funding-gap-2017<br>	https://www.pewtrusts.org/en/research-and-analysis/issue-briefs/2019/06/the-state-pension-funding-gap-2017<br>https://budgetblog.ctbaonline.org/chicagos-pension-crisis-isn-t-really-about-pensions-it-s-about-debt-cab30326b9c8<br>https://wirepoints.org/chicago-teachers-strike-why-is-no-one-talking-about-pensions/<br>https://www.manhattan-institute.org/chicago-teacher-pensions-vesting-strike<br>https://www.realclearpolicy.com/articles/2019/11/07/chicago_punts_on_its_looming_teacher_pension_disaster_111300.html<br>
 			https://www.teacherpensions.org/<br>https://www.teacherpensions.org/sites/default/files/Teacher%20Pension%20Pac-Man_Web.pdf
 
 		</p>
